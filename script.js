@@ -1,5 +1,3 @@
-const { async } = require("postcss-js");
-
 const inputSlider = document.querySelector("[data-lengthSlider]");
 const passwordDisplay = document.querySelector("[data-passwordDisplay]");
 const copyMsg = document.querySelector("[data-copyMsg]");
@@ -122,3 +120,37 @@ copyBtn.addEventListener('click',()=>{
         copyContent();
     }
 })
+
+
+//let start the journey to find new passwrd
+
+//remove old passwrd
+password = "";
+
+let funcArr = [];
+if (uppercaseCheck.checked)
+    funcArr.push(generateUpperCase);
+
+if (LowercaseCheck.checked)
+    funcArr.push(generateLowerCase);
+
+if (symbolCheck.checked)
+    funcArr.push(generateSymbol);
+
+if (numbersCheck.checked)
+    funcArr.push(generateRandomNumber);
+
+    //compulsory addition
+    for(let i=0;i<funcArr.length;i++){
+        password=password+funcArr[i]();
+
+    }
+    // remaining addition
+    for(let i=0;i<passwordLength-funcArr.length;i++){
+        let randIndex = getRndInteger(0,funcArr.length);
+        password+=funcArr[randIndex]();
+        
+    }
+    password=shufflePassword(Array.from(password)); 
+    passwordDisplay.value=password;
+    calcStrength();
