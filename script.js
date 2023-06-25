@@ -92,3 +92,33 @@ async function copyContent(){
         copyMsg.classList.remove("active");
     }, 2000);
 }
+
+function handleCheckboxChange(){
+    checkCount=0;
+    allCheckBox.forEach((checkbox)=>{
+        if(checkbox.checked){
+            checkCount++;
+        }
+
+    });
+
+    if(passwordLength<checkCount){
+        passwordLength=checkCount;
+        handleSlider();
+    }
+}
+allCheckBox.forEach((checkbox)=>{
+    checkbox.addEventListener('change',handleCheckboxChange);
+})
+
+inputSlider.addEventListener('input',(e)=>{
+   passwordLength=e.target.value;
+   handleSlider();
+}) 
+
+
+copyBtn.addEventListener('click',()=>{
+    if(passwordDisplay.value){
+        copyContent();
+    }
+})
