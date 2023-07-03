@@ -6,7 +6,7 @@ const lengthDisplay = document.querySelector("[data-lengthNumber]");
 const indicator = document.querySelector("[data-indicator]");
 const copyBtn = document.querySelector("[data-copy]");
 const uppercaseCheck = document.querySelector("#uppercase");
-const LowercaseCheck = document.querySelector("#Lowercase");
+const lowercaseCheck = document.querySelector("#Lowercase");
 const numbersCheck = document.querySelector("#numbers");
 const symbolCheck = document.querySelector("#symbol");
 const allCheckBox = document.querySelectorAll("input[type=checkbox]")
@@ -62,7 +62,7 @@ function calcStrength() {
     let hasNumber = false;
     let hasSymbol = false;
 
-    if (LowercaseCheck.checked) hasLower = true;
+    if (lowercaseCheck.checked) hasLower = true;
     if (uppercaseCheck.checked) hasUpper = true;
     if (numbersCheck.checked) hasNumber = true;
     if (symbolCheck.checked) hasSymbol = true;
@@ -156,7 +156,7 @@ let funcArr = [];
 if (uppercaseCheck.checked)
     funcArr.push(generateUpperCase);
 
-if (LowercaseCheck.checked)
+if (lowercaseCheck.checked)
     funcArr.push(generateLowerCase);
 
 if (symbolCheck.checked)
