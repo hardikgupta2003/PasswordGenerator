@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PasswordGenerator</title>
 </head>
-       <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css">
 <body>
     <div class="container">
-        <h1>PasswordGenerator</h1>
+        <h1>Password Generator</h1>
         <div class="display-container">
 
-            <input readonly placeholder="Password" class="display-container" data-passwordDisplay>
+            <input readonly placeholder="Password" class="display" data-passwordDisplay>
 
-            <button class="">
+            <button data-copy class="copyBtn">
                 <span data-copyMsg></span>
                 <img src="./assets/copy.svg" alt="copy" width="23" height="23">
             </button>
@@ -28,44 +28,45 @@
                 <p data-lengthNumber>0</p>
             </div>
             <!-- slider -->
-            <input type="range" name="slider" class="slider" min="1" max="20" step="1">
+            <input type="range" name="slider" class="slider" min="1" max="20" step="1" data-lengthSlider> 
             <div class=""></div>
             <!-- checkboxes -->
-
+            
             <!-- checkbox1 -->
-            <div>
+            <div class="check">
                 <input type="checkbox" name="checkbox" id="uppercase">
 
                 <label for="uppercase">Includes Uppercase letters</label>
             </div>
             <!-- checkbox2 -->
-            <div>
+            <div class="check">
                 <input type="checkbox" name="checkbox" id="Lowercase">
                 <label for="Lowercase">Includes Lowercase letters</label>
             </div>
             <!-- checkbox3 -->
-            <div>
+            <div class="check">
                 <input type="checkbox" name="checkbox" id="numbers">
                 <label for="numbers">Includes Numbers letters</label>
             </div>
             <!-- checkbox4 -->
-            <div>
+            <div class="check">
                 <input type="checkbox" name="checkbox" id="symbol">
                 <label for="symbol">Includes Symbol letters</label>
             </div>
             <!-- strength section -->
             <div class="strength-container">
                 <p>strength</p>
-                <div class="" data-indicator></div>
+                <div class="indicator" data-indicator></div>
             </div>
 
             <!-- generate password -->
-            <button class="generatePassword">Generate Password </button>
+            <button class="generateButton" >Generate Password </button>
 
         </div>
 
 
     </div>
+
     <script src="script.js"></script>
 </body>
 
