@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PasswordGenerator</title>
 </head>
+<link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;600&display=swap"
+    rel="stylesheet" />
 <link rel="stylesheet" href="styles.css">
+
 <body>
     <div class="container">
         <h1>Password Generator</h1>
@@ -15,7 +18,7 @@
             <input readonly placeholder="Password" class="display" data-passwordDisplay>
 
             <button data-copy class="copyBtn">
-                <span data-copyMsg></span>
+                <span class="tooltip" data-copyMsg></span>
                 <img src="./assets/copy.svg" alt="copy" width="23" height="23">
             </button>
         </div>
@@ -28,10 +31,10 @@
                 <p data-lengthNumber>0</p>
             </div>
             <!-- slider -->
-            <input type="range" name="slider" class="slider" min="1" max="20" step="1" data-lengthSlider> 
+            <input type="range" name="slider" class="slider" min="1" max="20" step="1" data-lengthSlider>
             <div class=""></div>
             <!-- checkboxes -->
-            
+
             <!-- checkbox1 -->
             <div class="check">
                 <input type="checkbox" name="checkbox" id="uppercase">
@@ -60,7 +63,7 @@
             </div>
 
             <!-- generate password -->
-            <button class="generateButton" >Generate Password </button>
+            <button class="generateButton">Generate Password </button>
 
         </div>
 
